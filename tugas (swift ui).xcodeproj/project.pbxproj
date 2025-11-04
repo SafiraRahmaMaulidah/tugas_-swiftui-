@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EFC10BBB2EB45769001F395C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = EFC10BBA2EB45769001F395C /* SwiftyJSON */; };
+		EFC10BBE2EB4577E001F395C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EFC10BBD2EB4577E001F395C /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		EFC10B932EB32E80001F395C /* tugas (swift ui).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tugas (swift ui).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC10BBB2EB45769001F395C /* SwiftyJSON in Frameworks */,
+				EFC10BBE2EB4577E001F395C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			);
 			name = "tugas (swift ui)";
 			packageProductDependencies = (
+				EFC10BBA2EB45769001F395C /* SwiftyJSON */,
+				EFC10BBD2EB4577E001F395C /* Alamofire */,
 			);
 			productName = "tugas (swift ui)";
 			productReference = EFC10B932EB32E80001F395C /* tugas (swift ui).app */;
@@ -94,6 +103,10 @@
 			);
 			mainGroup = EFC10B8A2EB32E80001F395C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EFC10BB92EB45769001F395C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				EFC10BBC2EB4577E001F395C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EFC10B942EB32E80001F395C /* Products */;
 			projectDirPath = "";
@@ -328,6 +341,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFC10BB92EB45769001F395C /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		EFC10BBC2EB4577E001F395C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFC10BBA2EB45769001F395C /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFC10BB92EB45769001F395C /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		EFC10BBD2EB4577E001F395C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFC10BBC2EB4577E001F395C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFC10B8B2EB32E80001F395C /* Project object */;
 }

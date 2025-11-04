@@ -1,19 +1,12 @@
-//
-//  Networking.swift
-//  fetching api
-//
-//  Created by iCodeWave Community on 07/10/25.
-//
-
 import Foundation
 import SwiftyJSON
 import Alamofire
+import Combine
 
-class Networking {
-    
-    static let shared = Networking()
-    
-    func ambilData(completion: @escaping ([Quote]) -> Void) {
+class Networking: ObservableObject {
+    @Published var dataYangDiambil: [Quote] = []
+
+    func ambilData() {
         let url = "https://dummyjson.com/quotes"
 
         AF.request(url).responseData { response in
@@ -28,24 +21,22 @@ class Networking {
                         let id = item["id"].intValue
                         let quote = item["quote"].stringValue
                         let author = item["author"].stringValue
-
                         quotes.append(Quote(id: id, quote: quote, author: author))
                     }
 
-                    print("✅ Berhasil ambil data dari API (\(quotes.count) quotes)")
-                    completion(quotes)
+                    DispatchQueue.main.async {
+                        self.dataYangDiambil = quotes
+                        print("✅ Berhasil ambil data dari API (\(quotes.count) quotes)")
+                    }
 
                 } catch {
                     print("❌ Gagal parsing JSON:", error.localizedDescription)
-                    completion([])
                 }
 
             case .failure(let error):
                 print("❌ Gagal ambil data:", error.localizedDescription)
-                completion([])
             }
         }
     }
 }
-
 

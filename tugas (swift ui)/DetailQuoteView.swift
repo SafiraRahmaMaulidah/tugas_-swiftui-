@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct DetailQuoteView: View {
+    let quote: Quote
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color(.systemPink).opacity(0.05).ignoresSafeArea()
+            
+            VStack(spacing: 20) {
+               
+                
+                Text("“\(quote.quote)”")
+                    .font(.title3)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                
+                Text("- \(quote.author)")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                
+                Spacer()
+            }
+            .padding()
+        }
+       
     }
 }
 
 #Preview {
-    DetailQuoteView()
+    DetailQuoteView(quote: Quote(id: 1, quote: "", author: ""))
 }
