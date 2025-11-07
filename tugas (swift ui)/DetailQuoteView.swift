@@ -6,6 +6,19 @@
 //
 
 import SwiftUI
+import Combine
+
+//tamabahin mpvm
+class DetailQuoteViewModel: ObservableObject {
+  @Published var tampunganData: [Quote] = [] // Wajib pake `@Published` bersama `ObservableObject`
+  var network = Networking()
+  
+  func ambilData() {
+    network.ambilData { hasil in // [Product]
+      self.tampunganData = hasil
+    }
+  }
+}
 
 struct DetailQuoteView: View {
     let quote: Quote

@@ -5,7 +5,7 @@
 //  Created by iCodeWave Community on 07/10/25.
 //
 
-struct Quote {
+struct Quote: Hashable {
     let id: Int
     let quote: String
     let author: String
